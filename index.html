@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+  <style>
+  body {
+    background-color: wheat;
+  }
+  .tela{
+    border: solid 2px black;
+    width: 800px;
+    height: 800px;
+    text-align: center;
+    margin: 200px 100px;
+    background-color: whitesmoke;
+    font-size: 50px;
+    
+  }
+  #resultado {
+    font-size: 200px;
+    position: absolute;
+    z-index: 1;
+    margin-left: 300px;
+    animation: movi 2s;
+  }
+  button {
+    width: 500px;
+    height: 100px;
+    margin-top: 300px;
+    font-size: 30px;
+    
+  }
+  @keyframes movi {
+    0% {
+      font-size: 20px;
+      margin-left: 250px;
+    }
+    50% {
+      font-size: 500px;
+      margin-left: 150px;
+      color: green;
+    }
+    100% {
+      font-size: 200px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="tela">
+    <h1>
+      Exercicio 1.
+    </h1>
+    <div id="resultado"></div><br>
+    <button type="button" onclick="evento()">Resultado</button>
+  </div>
+  <script>
+     var indice = 13;
+     var soma = 0;
+     var k = 0;
+     function evento () {
+       while (k < indice) {
+         k = k+1;
+         soma = soma+k;
+         document.getElementById("resultado").innerHTML = soma;
+       }}
+  </script>
+</body>
+</html>
