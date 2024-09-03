@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+  <style>
+  body {
+    background-color: wheat;
+  }
+  .tela{
+    border: solid 2px black;
+
+    text-align: center;
+    margin: 200px 100px;
+    background-color: whitesmoke;
+    font-size: 50px;
+    
+  }
+  #resultado {
+    font-size: 200px;
+    
+    margin-left: 300px;
+    animation: movi 2s;
+  }
+  button {
+    width: 500px;
+    height: 100px;
+    margin-top: 200px;
+    font-size: 30px;
+    
+  }
+  #numero {
+    width: 100px;
+    height: 100px;
+    font-size: 70px;
+  }
+  @keyframes movi {
+    0% {
+      font-size: 20px;
+      margin-left: 250px;
+    }
+    50% {
+      font-size: 500px;
+      margin-left: 150px;
+      color: green;
+    }
+    100% {
+      font-size: 200px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="tela">
+    <h1>
+      Exercicio 4.
+    </h1>
+    <label>Faturamento Total Distribuidora.</label>
+     <p id="dist"></p>
+    <label>Percent. Faturamento São Paulo.</label>
+     <p id="sp"></p>
+    <label>Percent. Faturamento Rio de Janeiro.</label>
+     <p id="rj"></p>
+    <label> Percent. Faturamento Minas Gerais.</label>
+     <p id="mg"></p>
+    <label>Percent. Faturamento Espirito Santo.</label>
+     <p id="es"></p>
+    <label>Percent. Faturamento Outros</label>
+     <p id="ou"></p>
+     
+    
+    <div id="resultado"></div><br>
+    <button type="button" onclick="evento()">Resultado</button>
+  </div>
+  <script>
+     
+     function evento () {
+       var sp = 67836.43;
+       var rj = 36678.66;
+       var mg = 29229.88;
+       var es = 27165.48;
+       var outros = 19849.53;
+       var distribuidora = sp+rj+mg+es+outros;
+       var percentSP = sp * 100 / distribuidora;
+       var percentRJ = rj * 100 / distribuidora;
+       var percentMG = mg * 100 / distribuidora;
+       var percentES = es * 100 / distribuidora;
+       var percentOU = outros * 100 / distribuidora;
+       document.getElementById("dist").innerHTML = 'R$'+distribuidora;
+       document.getElementById("sp").innerHTML = Math.round(percentSP)+"%";
+       document.getElementById("rj").innerHTML = Math.round(percentRJ)+"%";
+       document.getElementById("mg").innerHTML = Math.round(percentMG)+"%";
+       document.getElementById("es").innerHTML = Math.round(percentES)+"%";
+       document.getElementById("ou").innerHTML = Math.round(percentOU)+"%";
+       
+       }
+  </script>
+</body>
+</html>
+
